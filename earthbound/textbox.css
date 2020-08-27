@@ -1,0 +1,58 @@
+﻿@font-face {
+  font-family: 'Applekid';
+  src: url('apple_kid.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#app {
+  height: 50vh;
+  width: 50vw;
+  font-size: 1em;
+  line-height: 1em;
+  zoom: 200%;
+  image-rendering: pixelated;
+  font-family: Applekid, Consolas;
+  font-weight: normal;
+}
+
+.chat_window div {
+  font-weight: normal;
+  margin: 0;
+}
+
+.nickname.quoted::after {
+  content: url('point.png');
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0);
+  color: #fff;
+}
+
+.menu {
+  background-color: #000;
+  border: 6px solid transparent;
+  padding: 0;
+  border-image: url(border.png) 6;
+  width: calc(100% - 12px);
+}
+
+.menu > *{
+  zoom: 50%;
+  line-height: 0.4em;
+}
+
+.menu .popout span, .menu .popout label {
+  display: block;
+  float: right;
+  clear: both;
+}
+
+.chat_window li > div {
+  border: 6px solid transparent;
+  border-radius: 6px;
+  border-image: url(border.png) 6;
+  background-color: #000;
+}
