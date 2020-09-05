@@ -1,0 +1,95 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+#app {
+  font-family: Merriweather;
+}
+
+.chat_window div {
+  margin: 0;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0);
+  color: #fff;
+}
+
+.menu {
+  background-color: #444;
+  border: 1px solid transparent;
+  padding: 0;
+  width: calc(100% - 2px);
+}
+
+.menu .popout span, .menu .popout label {
+  display: block;
+  float: right;
+  clear: both;
+}
+
+.chat_window ol {
+  height: 100%;
+  line-height: 1.4em;
+}
+
+.chat_window li .badges * {
+  height: 1em;
+  margin-left: 1px;
+}
+
+.chat_window li {
+  margin: 2px;
+  padding: 1px 4px 1px 1px;
+  overflow: visible;
+}
+
+.chat_window li > div {
+  margin: 2px;
+  border-radius: 2px;
+  overflow: visible;
+}
+
+img.emote {
+  height: 1.6em;
+  margin: -0.5em -0.1em -0.25em;
+}
+
+li.even {background: #242224}
+li.odd {background: #1f1e1f}
+
+.nickname {
+  font-weight: 600;
+}
+
+.nickname::after {
+  content: ": ";
+}
+
+span[class^="cheertext-"] {
+  font-weight: 600;
+}
+
+/* Animation magic */
+
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all .3s ease;
+  transform-origin: top;
+  top: 0;
+}
+.slide-fade-leave {
+  max-height: 800px;
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(100%);
+}
+
+.slide-fade-leave-to {
+  max-height: 0;
+  position: relative;
+  top: -10em;
+}
+
+.slide-fade-move {
+  transition: transform 0.3s ease;
+}
