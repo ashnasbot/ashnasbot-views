@@ -33,8 +33,9 @@ body {
 }
 
 .chat_window li .badges * {
-  height: 1em;
+  height: 1.4em;
   margin-left: 1px;
+  margin-top: -0.2em;
 }
 
 .chat_window li {
