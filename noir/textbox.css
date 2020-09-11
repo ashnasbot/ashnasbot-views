@@ -55,6 +55,10 @@ img.emote {
   margin: -0.5em -0.1em -0.25em;
 }
 
+.clip img {
+    height: 6em;
+}
+
 li.even {background: #242224}
 li.odd {background: #1f1e1f}
 
