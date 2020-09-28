@@ -58,7 +58,11 @@ Vue.component('shadow-zero', {
 			that.width = options.width;
 			that.height = options.height;
 			that.image = options.image;
-			that.x = options.context.canvas.width + (Math.random() * options.context.canvas.width * 1.5);
+			if (options.id < this.rate) {
+				that.x = options.context.canvas.width + ((options.context.canvas.width / this.rate) * options.id );
+			} else {
+				that.x = options.context.canvas.width + options.width;
+			}
 			that.y = (options.context.canvas.height * 0.33) + (Math.random() * (options.context.canvas.height * 0.33));
 			that.speed = 1.5 + (Math.random());
 			
@@ -66,7 +70,7 @@ Vue.component('shadow-zero', {
 
 				tickCount += 1;
 				that.x -= that.speed;
-				if (that.x < -that.width) {
+				if (that.x < -(that.width / numberOfFrames)) {
 					return false;
 				}
 
@@ -105,6 +109,7 @@ Vue.component('shadow-zero', {
 			for (let i = 0; i < number; i++) {
 				// Create sprite
 				var shadow = this.sprite({
+					id: i,
 					context: this.canvas.getContext("2d"),
 					width: 136,
 					height: 36,
@@ -115,11 +120,12 @@ Vue.component('shadow-zero', {
 				this.shadows.push(shadow)
 			}
 			// The straggler is last
-			this.shadows[this.shadows.length - 1].x += this.canvas.width;
+			this.shadows[this.shadows.length - 1].x += 0.5 * this.canvas.width;
 			this.shadows[this.shadows.length - 1].speed = 2;
 		},
         do_alert(msg) {
 			try {
+				// TODO: Handle event while shadows still running
 				this.createShadows(parseInt(msg.tags['msg-param-viewerCount']));
 			} catch(err) {
 				console.warn(err);
