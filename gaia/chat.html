@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- development version, includes helpful console warnings -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="/static/common/views.js"></script>
+	<script src="/static/common/config.js"></script>
+    <link rel="stylesheet" type="text/css" href="textbox.css">
+	<script> var scale_factor = 2.0; </script>
+	<script src="colors.js"></script>
+</head>
+<body>
+<div id="app" client="chat">
+	<div class="menu frame">
+		<form method="GET">
+			<label for="menu_channel">Channel</label>
+			<input v-model="channel" id="menu_channel" name="channel"/>
+			<input type="submit"/>
+		</form>
+		<view-select></view-select>
+		<config-menu v-on:cfg-update="updateCfg($event)"></config-menu>
+	</div>
+	<div v-cloak class="chat_window frame">
+		<ol id="chat">
+		<li v-for="msg in chat" v-bind:key="msg.id" v-bind:id="msg.id">
+			<div v-bind:class="msg.type" >
+				<div v-if="msg.type != 'TWITCHCHATMESSAGE'" class="alert" v-html="msg.tags['system-msg']"></div>
+                <span v-if="msg.message" class="nickname" v-html="msg.nickname" v-bind:style="hextohue(msg.tags[&quot;color&quot;])"></span>
+                <span v-if="msg.message" class="message" v-html="msg.message" v-bind:style="hextohue(msg.tags[&quot;color&quot;])"></p>
+			</div>
+		</li>
+		</ol>
+	</div>
+</div>
+<script defer src="/static/common/handlers.js"></script>
+</body>
+</html>
+
