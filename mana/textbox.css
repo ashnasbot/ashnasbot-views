@@ -25,6 +25,9 @@ div.chat_window {
   height: calc(100% - 16px);
   max-height: calc(100% - 16px);
 
+  font-weight: normal;
+  margin: 0;
+
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -37,22 +40,32 @@ div.chat_window {
   width: 100%;
 }
 
-.chat_window li div {
-  display: block;
-  box-shadow:0 0 5px 2px #222;
-  border-radius:6px;
-  padding: 0.2em 0.3em;
+.chat_window li > div {
+  display: table;
+  box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
+  padding: 0.4em 0;
+  margin: 0;
+  image-rendering: pixelated;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+
   background:url(
     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAICAYAAADeM14FAAAAJElEQVQYV2NkVvb/z8DAwPD37kZGEM1IhgBIHwjAtIINIk0AACWVFdnTbUoAAAAAAElFTkSuQmCC
   ) repeat;
   background-size: 8px;
-  word-break: break-word;
-}
+  background-clip: padding-box;
 
-.chat_window div {
-  font-weight: normal;
-  margin: 0;
+  border-style: solid;
+  border-image-source: url(border.png);
+  border-image-width: 24px;
+  border-width: 16px 22px;
+  border-image-slice: 16;
+  border-image-repeat: repeat;
+  border-radius: 16px;
 }
 
 .nickname::after {
@@ -84,16 +97,7 @@ div.menu:focus-within, div.menu:hover {
   display: block;
 }
 
-.chat_window li div {
-  display: table;
-  width: calc(100vw - 32px);
-  border-spacing: 3px;
-  box-shadow: 0 0 1px 2px rgba(0,0,0,.4), 0 0 0 6px #dadcd7, inset 2px 2px 2px rgba(0,0,0,.7);
-  border-radius: 8px;
-  margin: 15px auto;
-}
-
-.chat_window li *{
+span, label {
   color: #fff;
   text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
@@ -123,14 +127,11 @@ div.menu:focus-within, div.menu:hover {
   font-family: manaspace;
   font-size: 32px;
   font-weight: normal;
-  margin: 5px 0;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 img.emote {
   display: inline-block;
+  image-rendering: optimizeQuality;
   vertical-align: bottom;
-  height: 1.12em;
-  margin: -.1em;
+  height: 1em;
 }
