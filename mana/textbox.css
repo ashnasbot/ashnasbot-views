@@ -21,9 +21,10 @@ a {
 div.chat_window {
   padding-top: 0px;
   overflow: hidden;
+  box-sizing: border-box;
 
-  height: calc(100% - 16px);
-  max-height: calc(100% - 16px);
+  height: 100%;
+  max-height: 110%;
 
   font-weight: normal;
   margin: 0;
@@ -34,7 +35,6 @@ div.chat_window {
 }
 
 .chat_window ol {
-  max-height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -45,13 +45,12 @@ div.chat_window {
   box-sizing: border-box;
   width: 100%;
   overflow: hidden;
-  padding: 0.4em 0;
+  padding: 0.2em 0 0.1625em;
   margin: 0;
   image-rendering: pixelated;
   word-wrap: break-word;
   word-break: break-word;
   overflow-wrap: break-word;
-
 
   background:url(
     data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAICAYAAADeM14FAAAAJElEQVQYV2NkVvb/z8DAwPD37kZGEM1IhgBIHwjAtIINIk0AACWVFdnTbUoAAAAAAElFTkSuQmCC
@@ -66,6 +65,8 @@ div.chat_window {
   border-image-slice: 16;
   border-image-repeat: repeat;
   border-radius: 16px;
+  line-height: 30px;
+  word-spacing: -6px;
 }
 
 .nickname::after {
@@ -97,7 +98,7 @@ div.menu:focus-within, div.menu:hover {
   display: block;
 }
 
-span, label {
+div, span, label {
   color: #fff;
   text-shadow: 1px 1px 0 #000,
     -1px 1px 0 #000,
@@ -134,4 +135,10 @@ img.emote {
   image-rendering: optimizeQuality;
   vertical-align: bottom;
   height: 1em;
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+    margin: 0 1em 0 1ex;
+    display: inline-block;
 }
