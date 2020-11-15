@@ -3,16 +3,18 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/base/base.css">
     <link rel="stylesheet" type="text/css" href="textbox.css">
-    <!-- development version, includes helpful console warnings -->
     <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
+    <!-- development version, includes helpful console warnings -->
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- Then add components-->
+	<script src="/static/common/sounds.js"></script>
 	<script src="/static/common/views.js"></script>
 	<script src="/static/common/config.js"></script>
 	<script> var scale_factor = 2; </script>
 </head>
 <body>
 <div id="app" client="chat,alert">
+	<sound-handler ref="soundhandler" v-bind:tts="config.tts"></sound-handler>
 	<div class="menu frame">
 		<form method="GET">
 			<label for="menu_channel">Channel</label>

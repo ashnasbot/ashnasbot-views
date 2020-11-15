@@ -109,12 +109,14 @@ body {
   opacity: 0;
   position: absolute;
   background-color: #000;
+  width: 100%;
 }
 
 div.menu:focus-within, div.menu:hover {
   opacity: 1 !important;
 }
 
-.menu .popout span {
+.menu .popout span, .menu label {
   display: block;
+  font-size: 50%;
 }

@@ -6,12 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="/static/common/views.js"></script>
 	<script src="/static/common/config.js"></script>
+	<script src="/static/common/sounds.js"></script>
     <link rel="stylesheet" type="text/css" href="textbox.css">
 	<script> var scale_factor = 2.0; </script>
 	<script src="colors.js"></script>
 </head>
 <body>
 <div id="app" client="chat">
+	<sound-handler ref="soundhandler"></sound-handler>
 	<div class="menu frame">
 		<form method="GET">
 			<label for="menu_channel">Channel</label>
