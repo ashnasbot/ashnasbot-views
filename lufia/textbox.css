@@ -1,0 +1,106 @@
+﻿@charset "utf-8";
+@font-face {
+  font-family: 'priphea';
+  src: url('priphea-major-i-mk-i.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[v-cloak] { display: none; }
+
+#app {
+  height: 100vh;
+  font-size: 32px;
+  box-sizing: border-box;
+  font-family: 'priphea', sans-serif;
+  image-rendering: pixelated;
+  color: white;
+}
+
+a {
+  color: #9146FF;
+}
+
+.chat_window li > div {
+  border-style: solid;
+  border-image-source: url(border.png);
+  border-image-width: 16px;
+  border-width: 16px;
+  border-image-slice: 8;
+  border-image-repeat: repeat;
+  border-radius: 16px;
+
+  background-color: #000073;
+}
+
+div.chat_window {
+  padding-top: 0px;
+  overflow: hidden;
+
+  height: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.chat_window ol {
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+  padding-right: 1ex;
+}
+
+.chat_window li {
+  display: block;
+  margin: 2px 0;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.chat_window div {
+  font-weight: normal;
+  margin: 0;
+  word-break: break-word;
+}
+
+.message .emote{
+  border: 0;
+  display: inline;
+  vertical-align: middle;
+  margin: -0.1em;
+  height: 1em; /* Ignore this warning */
+  image-rendering: auto;
+}
+
+.nickname::after {
+  content: ": ";
+}
+
+.chat_window span {
+  display: inline;
+}
+
+body {
+  background-color: rgba(0, 0, 0);
+  margin:0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu {
+  opacity: 0;
+  position: absolute;
+  background-color: #000;
+  width: 100%;
+}
+
+div.menu:focus-within, div.menu:hover {
+  opacity: 1 !important;
+}
+
+.menu .popout span, .menu label {
+  display: block;
+  font-size: 50%;
+}
