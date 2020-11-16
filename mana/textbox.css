@@ -132,7 +132,7 @@ div, span, label {
 
 img.emote {
   display: inline-block;
-  image-rendering: optimizeQuality;
+  image-rendering: auto;
   vertical-align: bottom;
   height: 1em;
 }
