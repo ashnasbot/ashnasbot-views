@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Twitch chat renderer">
+	<link rel="stylesheet" href="https://unpkg.com/98.css" />
+	<style>
+		button {
+			float: right;
+		}
+		.buttons {
+			display: flex;
+			justify-content: flex-end;
+		}
+		div.break {
+			float:right;
+			width: 2px;
+			content: ' ';
+		}
+	</style>
+</head>
+<body>
+	<div class="window" style="width:270px; height: 80px;">
+		<div class="title-bar">
+			<div class="title-bar-text">BRB</div>
+			<div class="title-bar-controls">
+				<button aria-label="Close" disabled></button>
+			</div>
+		</div>
+		<div class="window-body">
+			<p>Ashnas.exe has encountered an error and needs to brb.</p>
+			<span class="buttons">
+			<button disabled>Abort</button>
+			<div class="break"></div>
+			<button disabled>Retry</button>
+			<div class="break"></div>
+			<button >Coffee</button>
+			</span>
+		</div>
+	</div>
+</body>
+</html>
+

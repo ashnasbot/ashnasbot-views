@@ -1,0 +1,116 @@
+﻿[v-cloak] { display: none; }
+
+#app {
+  height: 100vh;
+}
+
+#chat {
+  overflow-y: scroll;
+}
+
+a {
+  color: #0000EE !important;
+}
+
+div.window.menu {
+  position: absolute;
+  top:30px;
+  left:30px;
+  right:80px;
+
+  background-color: #c0c0c0;
+
+  z-index: 200;
+}
+
+div.window.chat {
+  position: absolute;
+  top:2px;
+  bottom:2px;
+  left:2px;
+  right:2px;
+}
+
+.menu {
+  z-index: -10;
+}
+
+.window-body {
+  box-sizing: border-box;
+  height: calc(100% - 16px);
+}
+
+.tree-view {
+  box-sizing: border-box;
+  height: calc(100% - 48px);
+}
+
+#text-entry {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.badge {
+  display: inline-block;
+  height: 1em;
+}
+
+.badge[alt="moderator"] {
+  content:url("https://static-cdn.jtvnw.net/badges/v1/3267646d-33f0-4b17-b3df-f923a41db1d0/1");
+}
+
+li, input[type="text"] {
+  font-size: 22px !important;
+  word-break: break-word;
+}
+input[type="text"] {
+  height: 33px;
+}
+
+div.chat_window {
+  padding-top: 0px;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  height: 100%;
+  max-height: 110%;
+
+  font-weight: normal;
+  margin: 0;
+}
+
+.quoted::after {
+  content: ":";
+}
+
+.chat_window span {
+  display: inline;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.menu {
+  position: absolute;
+  background-color: #000;
+  opacity: 0;
+}
+
+div.menu:focus-within, div.menu:hover {
+  opacity: 1 !important;
+}
+
+.menu .popout span {
+  display: block;
+}
+
+img.emote {
+  display: inline-block;
+  image-rendering: auto;
+  vertical-align: bottom;
+  height: 1em;
+}
