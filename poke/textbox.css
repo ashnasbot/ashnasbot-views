@@ -18,11 +18,13 @@
   height: 50vh;
   width: 50vw;
   font-size: 14px;
-  zoom: 200%;
+  zoom: 100%;
   image-rendering: pixelated;
-  /*text-rendering: geometricPrecision;*/
   text-rendering: optimizeSpeed;
+}
 
+#chat {
+  overflow-y: hidden;
 }
 
 a {
