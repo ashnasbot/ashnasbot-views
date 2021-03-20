@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="textbox.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="dex.js"></script>
+</head>
+<body>
+    <div id="dex">
+        <p>Be Right Back!</p>
+        <div id="pokegrid">
+            <img v-for="(caught, idx) in dex"
+             v-bind:src="'sprites/' + idx + '.png'"
+             :class="caught && 'caught'"/>
+            <div>
+                <span>num</span>
+                <span>{{count}}</span>
+            </div>
+            <div>
+                <span>tot</span>
+                <span>151</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

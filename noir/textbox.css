@@ -4,6 +4,10 @@
   font-family: Merriweather;
 }
 
+#chat {
+  overflow: hidden;
+}
+
 .chat_window div {
   margin: 0;
 }
