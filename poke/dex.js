@@ -17,7 +17,10 @@ new Vue({
     },
     computed: {
         count: function () {
-            return Object.values(this.dex).filter((v) => v).length;
+            if (this.dex) {
+                return Object.values(this.dex).filter((v) => v).length;
+            }
+            return 0;
         }
     },
     methods: {
@@ -37,6 +40,7 @@ new Vue({
 });
 
 function makeNoise() {
+    if (nonoise){ return;}
     var audioCtx;
     if (window.webkitAudioContext) {
         audioCtx = new window.webkitAudioContext();

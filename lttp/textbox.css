@@ -16,6 +16,10 @@
   color: #eee;
 }
 
+#chat {
+  overflow-y: hidden;
+}
+
 a {
   color: #9146FF;
 }
