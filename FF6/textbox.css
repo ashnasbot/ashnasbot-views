@@ -1,0 +1,210 @@
+﻿@font-face {
+  font-family: 'FF6';
+  src: url('ff6.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "unifont";
+  src: url("unifont.woff2");
+}
+@font-face {
+  font-family: "unifont-upper";
+  src: url("unifont_upper.woff2");
+  unicode-range: U+10000-10FFFF;
+}
+
+[v-cloak] { display: none; }
+
+:root {
+  --outer-battle-window-color-0: #7c7874;
+  --outer-battle-window-color-1: #c8c4c0;
+  --outer-battle-window-color-2: #ccc9cc;
+  --outer-battle-window-color-3: #c9c9cb;
+  --outer-battle-window-color-4: #c2c1c5;
+  --outer-battle-window-color-5: #71767e;
+  --outer-battle-window-color-6: #6b6e87;
+
+  --battle-window-top-gradient-color: #6c70a6;
+  --background-color-blue:#21217c;
+  --background-color-black:#181820;
+  --battle-window-bottom-gradient-color: #040136;
+
+
+  --dialogue-window-color-gradient:#6d6db3,#5554ad,#5352a8,#3f4791,#354783,#32348d,#32328a,#313188,#222279,#14156d,#02045a,#040233,#020234,#020134;
+  --battle-window-border-radius: 5px;
+
+  --br:5px;     /* border radius   */
+  --bg:#6b6e87,#71767e,#c2c1c5,#c9c9cb,#ccc9cc,#c8c4c0,#7c7874,#c0bcb3;/*border gradient */
+  --bgb: #6b6e87,#71767e,#c2c1c5,#c9c9cb,#ccc9cc,#c8c4c0,#7c7874,#c0bcb3,#020134;
+  --f:25px;/* minimum font size */
+
+  --highlighted-text: #edd758;
+
+}
+html {
+    color: #ecedee;
+    margin: 0px;
+    padding: 0px;
+    text-shadow: 1px 1px #2d2a4b;
+}
+
+/*div{
+    background-color: var(--background-color-black);
+}*/
+
+h1,h2,h3,h4,h5{
+    font-weight: normal; /*This typeface does not look good bold*/
+}
+
+#app {
+  height: 50vh;
+  width: 50vw;
+  image-rendering: pixelated;
+  text-rendering: optimizeSpeed;
+}
+
+#chat {
+  overflow-y: hidden;
+}
+
+a {
+  color: #00F;
+}
+
+div.chat_window {
+  padding-top: 0px;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.chat_window ol {
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.chat_window li div {
+  display: block;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.chat_window div {
+  font-weight: normal;
+  margin: 0;
+}
+
+.nickname::after {
+  content: ":";
+  margin-right: 1ex;
+}
+
+.chat_window span {
+  display: inline;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  font-family: FF6,"Minecraft",'unifont','unifont-upper','Fixedsys';
+  font-weight: normal;
+}
+
+.menu {
+  position: absolute;
+  background-color: #2a0089;
+  opacity: 0;
+  z-index: 1;
+}
+
+div.menu:focus-within, div.menu:hover {
+  opacity: 1 !important;
+}
+
+.menu .popout span {
+  display: block;
+}
+
+.chat_window li {
+  border-radius:var(--br);
+  padding:calc(var(--br) + 5px);
+  padding-right: 0;
+  background:
+    /*corners*/
+    radial-gradient(farthest-side at bottom right,var(--bg)) top    left /var(--br) var(--br),
+    radial-gradient(farthest-side at top    right,var(--bg)) bottom left /var(--br) var(--br),
+    radial-gradient(farthest-side at bottom left ,var(--bg)) top    right/var(--br) var(--br),
+    radial-gradient(farthest-side at top    left ,var(--bg)) bottom right/var(--br) var(--br),
+    /* borders*/
+    linear-gradient(to top   ,var(--bg)) top   /calc(100% - 2*var(--br)) var(--br),
+    linear-gradient(to bottom,var(--bg)) bottom/calc(100% - 2*var(--br)) var(--br),
+    linear-gradient(to right ,var(--bg)) right /var(--br) calc(100% - 2*var(--br)),
+    linear-gradient(to left  ,var(--bg)) left  /var(--br) calc(100% - 2*var(--br));
+  background-repeat:no-repeat;
+  /*
+  My first approach to solving this led to unmaintainable code. 
+  As of now, I feel that my current gradients are "good enough" at 
+  approximating the pixelated anti-aliasing of the original ui menu window.
+  */
+
+  box-sizing:border-box;
+  vertical-align:top;
+  font-size:var(--f);
+  border-width: 1px;
+  text-shadow: 2px 1px #2d2a4b;
+}
+
+.chat_window li > div {
+  display: table;
+  width: 100%;
+  /*border: 8px solid transparent;
+  border-image: url(border.png) 7 stretch;*/
+  box-sizing: border-box;
+  margin: 0 auto;
+  background: linear-gradient(to bottom,var(--dialogue-window-color-gradient));
+  padding: 5px;
+  margin: -5px;
+}
+
+
+.chat_window li *{
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+img.emote {
+  image-rendering: auto;
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  margin: -2px;
+}
+
+#app canvas {
+  position: absolute;
+  z-index: 10;
+}

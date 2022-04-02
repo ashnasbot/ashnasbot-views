@@ -6,13 +6,11 @@
 	<meta name="description" content="Twitch chat renderer">
     <link rel="stylesheet" type="text/css" href="/static/base/base.css">
     <link rel="stylesheet" type="text/css" href="textbox.css">
-    <!-- development version, includes helpful console warnings -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-	<script src="/static/common/sounds.js"></script>
 	<script src="/static/common/views.js"></script>
+	<script src="/static/common/sounds.js"></script>
 	<script src="/static/common/config.js"></script>
-	<script> var scale_factor = 3.5; </script>
+	<script> var scale_factor = 1.0; </script>
 </head>
 <body>
 <div id="app" client="chat">
@@ -32,7 +30,8 @@
 			<div v-bind:class="msg.type" >
 				<div v-if="msg.type != 'TWITCHCHATMESSAGE'" class="alert" v-html="msg.tags['system-msg']"></div>
                 <span v-if="msg.message" class="nickname" v-html="msg.nickname" v-bind:style="{ color: msg.tags[&quot;color&quot;]}"></span>
-                <span v-if="msg.message" class="message" v-html="msg.message"></p>
+                <span v-if="msg.message && msg.extra && msg.extra.includes('quoted')" class="message" v-html="msg.message"></span>
+                <span v-if="msg.message && (!msg.extra || !msg.extra.includes('quoted'))" class="message" v-html="msg.message" v-bind:style="{ color: msg.tags[&quot;color&quot;]}"></span>
 			</div>
 		</li>
 		</ol>
@@ -41,4 +40,3 @@
 <script src="/static/common/handlers.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,144 @@
+﻿@font-face {
+  font-family: 'FF5';
+  src: url('rpge-butz.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "unifont";
+  src: url("unifont.woff2");
+}
+@font-face {
+  font-family: "unifont-upper";
+  src: url("unifont_upper.woff2");
+  unicode-range: U+10000-10FFFF;
+}
+
+[v-cloak] { display: none; }
+
+#app {
+  height: 50vh;
+  width: 50vw;
+  font-size: 16px;
+  zoom: 100%;
+  image-rendering: pixelated;
+  text-rendering: optimizeSpeed;
+}
+
+#chat {
+  overflow-y: hidden;
+}
+
+a {
+  color: #00F;
+}
+
+div.chat_window {
+  padding-top: 0px;
+  overflow: hidden;
+  box-sizing: border-box;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.chat_window ol {
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.chat_window li div {
+  display: block;
+  overflow: hidden;
+  background-color: #2a0089;
+  background-size: 8px;
+  word-break: break-word;
+}
+
+.chat_window div {
+  font-weight: normal;
+  margin: 0;
+}
+
+.nickname::after {
+  content: ":";
+  margin-right: 1ex;
+}
+
+.chat_window span {
+  display: inline;
+  line-height: 16px;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  color:#FFF;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+
+  font-family: FF5,"Minecraft",'unifont','unifont-upper','Fixedsys';
+  font-weight: normal;
+}
+
+.menu {
+  position: absolute;
+  background-color: #2a0089;
+  color:#FFF;
+  opacity: 0;
+  z-index: 1;
+}
+
+div.menu:focus-within, div.menu:hover {
+  opacity: 1 !important;
+}
+
+.menu .popout span {
+  display: block;
+}
+
+.chat_window li > div {
+  display: table;
+  width: 100%;
+  border: 8px solid transparent;
+  border-image: url(border.png) 7 stretch;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.chat_window li *{
+  color: #FFF;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+img.emote {
+  image-rendering: auto;
+  display: inline-block;
+  vertical-align: middle;
+  height: 20px;
+  margin: -2px;
+}
+
+#app canvas {
+  position: absolute;
+  z-index: 10;
+}
