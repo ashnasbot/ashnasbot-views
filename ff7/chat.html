@@ -5,14 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Twitch chat renderer">
     <link rel="stylesheet" type="text/css" href="textbox.css">
-    <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="/static/common/views.js"></script>
+	<script src="/static/common/sounds.js"></script>
 	<script src="/static/common/config.js"></script>
-	<script> var scale_factor = 8; </script>
+	<script> var scale_factor = 4; </script>
 </head>
 <body>
 <div id="app" client="chat">
+	<sound-handler ref="soundhandler" v-bind:tts="config.tts"></sound-handler>
 	<div class="menu ff7 ff7-bg ff7-frame">
 		<form method="GET">
 			<input v-model="channel" id="menu_channel" name="channel"/>
