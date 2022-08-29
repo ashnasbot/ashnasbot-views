@@ -28,6 +28,10 @@ body {
 .menu .popout span, .menu .popout label {
   display: block;
   float: right;
+}
+
+.menu .popout input {
+  float: left;
   clear: both;
 }
 
@@ -80,25 +84,24 @@ span[class^="cheertext-"] {
 
 /* Animation magic */
 
-.slide-fade-enter-active, .slide-fade-leave-active {
-  transition: all .3s ease;
-  transform-origin: top;
-  top: 0;
-}
-.slide-fade-leave {
-  max-height: 800px;
+.slide-fade-move,
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: all 0.25s ease;
 }
 
-.slide-fade-enter, .slide-fade-leave-to {
-  transform: translateY(100%);
-}
-
+.slide-fade-enter-from,
 .slide-fade-leave-to {
-  max-height: 0;
-  position: relative;
-  top: -10em;
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.slide-fade-leave-to {
+  transform-origin: top;
+}
+.slide-fade-enter-from {
+  transform-origin: bottom;
 }
 
-.slide-fade-move {
-  transition: transform 0.3s ease;
+.slide-fade-leave-active {
+  position: absolute;
 }
