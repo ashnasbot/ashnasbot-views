@@ -10,7 +10,7 @@ body {
 }
 
 #chat {
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 #app {
@@ -81,10 +81,10 @@ div.ff7 img {
 }
 
 div.ff7 img.emote {
-  margin: -4px;
-  height: 32px;
-  width: 32px;
-  vertical-align: middle;
+  margin: 0 2px;
+  height: 24px;
+  width: 24px;
+  vertical-align: top;
 }
 
 div.ff7 q {

@@ -9,7 +9,7 @@
 	<script src="/static/common/views.js"></script>
 	<script src="/static/common/sounds.js"></script>
 	<script src="/static/common/config.js"></script>
-	<script> var scale_factor = 4; </script>
+	<script> var scale_factor = 1.8; </script>
 </head>
 <body>
 <div id="app" client="chat">
@@ -23,7 +23,7 @@
 		<config-menu v-on:cfg-update="updateCfg($event)"></config-menu>
 	</div>
 	<div v-cloak>
-		<transition-group name="slide-fade" tag="ol">
+		<transition-group name="slide-fade" tag="ol" id="chat">
 		<li v-for="msg in chat" v-bind:key="msg.id">
 			<div v-if="msg.type === 'TWITCHCHATMESSAGE'" class="ff7 ff7-msg ff7-frame ff7-bg">
 				<span class="badges">
