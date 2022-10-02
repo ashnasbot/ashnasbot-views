@@ -25,7 +25,7 @@
 		<config-menu v-on:cfg-update="updateCfg($event)"></config-menu>
 	</div>
 	<div v-cloak class="chat_window frame">
-		<transition-group name="slide-fade" tag="ol" id="chat">
+		<transition-group name="slide-fade" tag="ol" id="chat" mode="out-in" appear>
 		<li v-for="msg in chat" v-bind:key="msg.id" v-bind:id="msg.id" v-bind:class="[msg.alternator ? 'even' : 'odd']" >
 			<div v-bind:class="msg.type" >
 				<div v-if="msg.type != 'TWITCHCHATMESSAGE'" class="alert" v-html="msg.tags['system-msg']"></div>

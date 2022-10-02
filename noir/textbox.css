@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 #app {
   font-family: Merriweather;
@@ -87,21 +87,14 @@ span[class^="cheertext-"] {
 .slide-fade-move,
 .slide-fade-enter-active,
 .slide-fade-leave-active {
-  transition: all 0.25s ease;
+  transition: transform 0.25s;
 }
-
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-100%);
 }
-.slide-fade-leave-to {
-  transform-origin: top;
-}
-.slide-fade-enter-from {
-  transform-origin: bottom;
-}
-
+.slide-fade-enter-active,
 .slide-fade-leave-active {
   position: absolute;
+  width: 100%;
 }
