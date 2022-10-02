@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
 #app {
   font-family: Merriweather;
@@ -60,7 +60,7 @@ body {
 
 img.emote {
   height: 1.6em;
-  margin: -0.5em -0.1em -0.25em;
+  margin: -0.4em -0.1em -0.25em;
 }
 
 .clip img {
