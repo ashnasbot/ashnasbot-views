@@ -21,7 +21,7 @@
 			<input v-model="channel" id="menu_channel" name="channel"/>
 			<input type="submit"/>
 		</form>
-		<config-menu v-on:cfg-update="updateCfg($event)"></config-menu>
+		<config-menu ref="menu" v-on:cfg-update="updateCfg($event)"></config-menu>
 		<view-select></view-select>
 	</div>
 	<div v-cloak class="chat_window">

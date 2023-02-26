@@ -4,6 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Twitch chat renderer">
+	<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/gnu-unifont" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/static/base/base.css">
     <link rel="stylesheet" type="text/css" href="textbox.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="/static/common/views.js"></script>
@@ -14,7 +16,7 @@
 <body>
 <div id="app" client="chat">
 	<sound-handler ref="soundhandler" v-bind:tts="config.tts"></sound-handler>
-	<div class="menu ff7 ff7-bg ff7-frame">
+	<div class="box menu bg frame">
 		<form method="GET">
 			<input v-model="channel" id="menu_channel" name="channel"/>
 			<input type="submit"/>
@@ -24,25 +26,25 @@
 	</div>
 	<div v-cloak>
 		<transition-group name="slide-fade" tag="ol" id="chat">
-		<li v-for="msg in chat" v-bind:key="msg.id"
-		:set="pos=0">
-		<!--:set="pos=Math.random() * (this.innerWidth / 2)"> -->
-			<div v-if="msg.type === 'TWITCHCHATMESSAGE'" class="ff7 ff7-msg ff7-frame ff7-bg"
-			:style="{left: `${pos}px`, maxWidth: `calc(100vw - ${pos}px - 32px)`}">
-				<span class="badges">
-					<span v-for="badge in msg.badges" v-html="badge"></span>
-				</span>
-				<span class="nick" v-html="msg.nickname">:</span>
-				<p><q v-bind:class="msg.extra" v-html="msg.message"></p>
-			</div>
-			<div v-else class="ff7 ff7-msg ff7-frame ff7-bg"
-			:style="{left: `${pos}px`, maxWidth: `calc(100vw - ${pos}px - 32px)`}">
-				<div class="column">
-					<div class="stripe"></div>
+		<li v-for="msg in chat" v-bind:key="msg.id">
+			<div v-if="msg.type === 'TWITCHCHATMESSAGE'" class="box msg frame bg">
+				<div class="box-inner">
+					<span class="badges">
+						<span v-for="badge in msg.badges" v-html="badge"></span>
+					</span>
+					<span class="nick" v-html="msg.nickname">:</span>
+					<p><q v-bind:class="msg.extra" v-html="msg.message"></p>
 				</div>
-				<div class="column">
-					<p class="faded" v-bind:class="msg.extra" v-html="msg.tags['system-msg']"></p>
-					<p class="faded" v-bind:class="msg.extra" v-html="msg.message"></p>
+			</div>
+			<div v-else class="box msg frame bg">
+				<div class="box-inner">
+					<div class="column">
+						<div class="stripe"></div>
+					</div>
+					<div class="column">
+						<p class="faded" v-bind:class="msg.extra" v-html="msg.tags['system-msg']"></p>
+						<p class="faded" v-bind:class="msg.extra" v-html="msg.message"></p>
+					</div>
 				</div>
 			</div>
 		</li>

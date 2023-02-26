@@ -22,7 +22,7 @@
 			<input type="submit"/>
 		</form>
 		<view-select></view-select>
-		<config-menu v-on:cfg-update="updateCfg($event)"></config-menu>
+		<config-menu ref="menu" v-on:cfg-update="updateCfg($event)"></config-menu>
 	</div>
 	<div v-cloak class="chat_window frame">
 		<transition-group name="slide-fade" tag="ol" id="chat" mode="out-in" appear>
