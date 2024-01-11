@@ -55,7 +55,7 @@ div.chat_window {
   width: 100%;
 }
 
-.chat_window li > div {
+.chat_window li > div, .menu.frame, .menu .form {
   display: table;
   box-sizing: border-box;
   width: 100%;
@@ -103,6 +103,7 @@ body {
   position: absolute;
   background-color: #000;
   opacity: 0;
+  overflow: visible !important;
 }
 
 div.menu:focus-within, div.menu:hover {
@@ -148,7 +149,7 @@ div, span, label {
 img.emote {
   display: inline-block;
   image-rendering: auto;
-  vertical-align: bottom;
+  vertical-align: middle;
   height: 1em;
 }
 

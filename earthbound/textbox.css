@@ -24,6 +24,10 @@
   font-weight: normal;
 }
 
+#chat {
+    overflow-y: hidden;
+}
+
 .chat_window div {
   font-weight: normal;
   margin: 0;
@@ -63,4 +67,8 @@ body {
   border-radius: 6px;
   border-image: url(border.png) 6;
   background-color: #000;
+}
+
+span.badges {
+  display: none;
 }

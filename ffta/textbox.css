@@ -1,7 +1,20 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+﻿@font-face {
+  font-family: 'FFTA';
+  src: url("Final Fantasy Tactics Advance.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  size-adjust: 40%;
+}
 
 #app {
-  font-family: Merriweather;
+  font-family: "FFTA", "Minecraft";
 }
 
 #chat {
@@ -15,14 +28,21 @@
 body {
   background-color: rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0);
-  color: #fff;
+  color: #210;
+  font-size: 48px;
 }
 
 .menu {
-  background-color: #444;
+  background-color: #e0e0c0;
   border: 1px solid transparent;
   padding: 0;
   width: calc(100% - 2px);
+  line-height: 0.7em;
+}
+
+.menu .popout  fieldset{
+  background-color: #e0e0c0;
+  padding: 1ex;
 }
 
 .menu .popout span, .menu .popout label {
@@ -37,38 +57,40 @@ body {
 
 .chat_window ol {
   height: 100%;
-  line-height: 1.4em;
 }
 
 .chat_window li .badges * {
-  height: 1.4em;
+  height: 0.7em;
   margin-left: 1px;
-  margin-top: -0.2em;
 }
 
 .chat_window li {
-  margin: 2px;
+  margin: 8px;
   padding: 1px 4px 1px 1px;
   overflow: visible;
+
+  border: solid 22px;
+  border-radius: 0 52px 52px 0;
+  border-image: url(border.png);
+  border-image-slice: 52;
+  border-image-width: 52px;
+  border-image-outset: 4px;
+  background-color: #e0e0c0;
+  text-shadow: 1px 1px 0 #d0c890;
 }
 
 .chat_window li > div {
-  margin: 2px;
-  border-radius: 2px;
+  margin: -20px;
   overflow: visible;
 }
 
 img.emote {
-  height: 1.6em;
-  margin: -0.4em -0.1em -0.25em;
+  height: 0.7em;
 }
 
 .clip img {
     height: 6em;
 }
-
-li.even {background: #242224}
-li.odd {background: #1f1e1f}
 
 .nickname {
   font-weight: 600;
@@ -76,10 +98,6 @@ li.odd {background: #1f1e1f}
 
 .nickname::after {
   content: ": ";
-}
-
-span[class^="cheertext-"] {
-  font-weight: 600;
 }
 
 /* Animation magic */
@@ -91,7 +109,7 @@ span[class^="cheertext-"] {
 }
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  transform: translateY(200%);
+  transform: translateX(-100%);
 }
 .slide-fade-enter-active,
 .slide-fade-leave-active {
