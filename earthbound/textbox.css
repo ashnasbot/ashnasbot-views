@@ -72,3 +72,7 @@ body {
 span.badges {
   display: none;
 }
+
+.me {
+  font-family: "SenorSaturno";
+}

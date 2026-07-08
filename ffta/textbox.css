@@ -5,16 +5,8 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Minecraft';
-  src: url('Minecraft.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  size-adjust: 40%;
-}
-
 #app {
-  font-family: "FFTA", "Minecraft";
+  font-family: "FFTA";
 }
 
 #chat {

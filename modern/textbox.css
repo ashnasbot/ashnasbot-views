@@ -212,9 +212,9 @@ div.menu .popout {
   box-sizing: border-box;
 }
 
-.popout::before {
-  content: "☰";
+.hamburger {
   background-color: #444;
+  color: #DDD;
   text-align: right;
   display: block;
   margin-right: 1em;

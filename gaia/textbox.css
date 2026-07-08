@@ -120,3 +120,7 @@ div.menu:focus-within, div.menu:hover {
   display: block;
   font-size: 50%;
 }
+
+#chat {
+  overflow: hidden !important;
+}

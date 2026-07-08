@@ -1,0 +1,101 @@
+@font-face {
+  font-family: ChronoType;
+  src: url('ChronoType.woff') format('woff');
+}
+
+#app {
+  font-family: ChronoType;
+}
+
+#chat {
+  overflow: hidden;
+}
+
+.chat_window div {
+  margin: 0;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.menu {
+  padding: 0;
+  width: 100%;
+}
+
+.menu .popout span, .menu .popout label {
+  display: block;
+  float: right;
+}
+
+.menu .popout input {
+  float: left;
+  clear: both;
+}
+
+.chat_window ol {
+  height: 100%;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.chat_window li .badges {
+  display: none;
+}
+
+.chat_window li {
+  margin: 2px 4px -0.8rem;
+  padding: 2px 8px 2px 2px;
+  overflow: visible;
+}
+
+.chat_window li div {
+  overflow: visible;
+}
+
+.chat_window li > div {
+  margin: 2px;
+  border-radius: 0;
+}
+
+img.emote {
+  height: 2rem;
+  vertical-align: middle;
+  margin: -1rem -0.3rem 0rem;
+}
+
+.clip img {
+    height: 12em;
+}
+
+.nickname {
+  font-weight: 600;
+}
+
+.nickname::after {
+  content: ": ";
+}
+
+span[class^="cheertext-"] {
+  font-weight: 600;
+}
+
+/* Animation magic */
+
+.slide-fade-move,
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  transition: transform 0.25s;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateY(200%);
+}
+.slide-fade-enter-active,
+.slide-fade-leave-active {
+  position: absolute;
+  width: 100%;
+}

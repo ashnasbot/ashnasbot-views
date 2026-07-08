@@ -34,7 +34,7 @@ body {
   margin-top: 0;
 }
 
-div.popout, div.ff7-frame {
+div.popout, div.ff7-frame, #app li > div {
   image-rendering: pixelated;
   border: solid 7px;
   border-radius: 8px;
@@ -42,12 +42,12 @@ div.popout, div.ff7-frame {
   border-image-slice: 7;
 }
 
-div.ff7-msg {
+div.ff7-msg, #app li > div {
   max-height: 600px;
   position: relative;
 }
 
-div.popout, div.ff7-bg { 
+div.popout, div.ff7-bg, #app li > div {
   margin: 2px 0;
   background: #04009d;
   background: -moz-linear-gradient(top,  #04009d 0%, #06004d 100%);
@@ -60,7 +60,7 @@ div.popout, div.ff7-bg {
   background-origin: border-box !important;
 }
 
-div.ff7 *{
+div.ff7 *, #app li > div * {
   color: #eff1ff;
   text-shadow: 2px 2px #212421,
                1px 1px #212021;
@@ -70,16 +70,16 @@ div.ff7 *{
   word-break: break-word;
 }
 
-div.ff7 {
+div.ff7, #app li > div {
   font-size: 0;
   padding: 0 4px;
 }
 
-div.ff7 span, div.ff7 p {
+div.ff7 span, div.ff7 p, #app li > div span, #app li > div p {
   font-size: 32px;
 }
 
-div.ff7 img {
+div.ff7 img, #app li > div img {
     border: 0;
     display:inline-block;
     margin: 0 2px;
@@ -87,7 +87,7 @@ div.ff7 img {
     box-shadow: none
 }
 
-div.ff7 img.emote {
+div.ff7 img.emote, #app li > div img.emote {
   margin: 0 2px;
   height: 24px;
   width: 24px;
@@ -112,7 +112,7 @@ ol li {
 list-style-type: none;
 }
 
-.ff7 .badges span {
+.ff7 .badges span, #app li > div .badges span {
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
@@ -156,8 +156,7 @@ div.menu .popout {
   box-sizing: border-box;
 }
 
-.popout::before {
-  content: "☰";
+.hamburger {
   text-align: right;
   display: block;
   margin-right: 1em;
@@ -166,6 +165,10 @@ div.menu .popout {
   right: 0;
   margin-left: auto;
   padding: 0 1ex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
 }
 
 

@@ -5,14 +5,6 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Minecraft';
-  src: url('Minecraft.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-
-}
-
-@font-face {
     font-family: "unifont";
     src: url("unifont.woff2");
 }
@@ -95,7 +87,7 @@ body {
   height: 100vh;
   overflow: hidden;
 
-  font-family: Poke,Minecraft,'unifont','unifont-upper','Fixedsys';
+  font-family: Poke,'unifont','unifont-upper','Fixedsys';
   font-weight: normal;
 }
 

@@ -1,0 +1,22 @@
+﻿@font-face {
+  font-family: 'SMRPG';
+  src: url('super-mario-rpg-proportional.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+#app {
+  font-family: 'SMRPG';
+  font-size: 32px;
+}
+
+#chat {
+  overflow-y: hidden;
+}
+
+.message {
+  color: #d2d1fa;
+  -webkit-text-stroke: 3px #202e74;
+  paint-order: stroke fill;
+  margin-left: 8px !important;
+}
